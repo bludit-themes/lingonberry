@@ -8,7 +8,7 @@ Responsive design and high-resolution assets means that Lingonberry will scale g
 - Bludit v2.0
 
 ## Screenshot
-![screenshot-lingoberry](https://raw.githubusercontent.com/bludit-themes/lingoberry/master/screenshot.png)
+![screenshot-lingoberry](https://github.com/bludit-themes/lingonberry/raw/master/screenshot.png)
 
 ## Author
 - Anders Norén
