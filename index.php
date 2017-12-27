@@ -28,8 +28,7 @@
 						echo '<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$Site->url().'">'.$Language->get('Homepage').'</a></li> ';
 
 						$staticPages = $dbPages->getStaticDB();
-						$staticPagesKeyList = array_keys($staticPages);
-						foreach ($staticPagesKeyList as $pageKey) {
+						foreach ($staticPages as $pageKey) {
 							$staticPage = buildPage($pageKey);
 							echo '<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$staticPage->permalink().'">'.$staticPage->title().'</a></li> ';
 						}

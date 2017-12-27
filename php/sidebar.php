@@ -6,10 +6,8 @@
 					<h3 class="widget-title">Recent Posts</h3>
 						<ul>
 							<?php
-								$pages = $dbPages->getList(1, 5, true);
-								$keys = array_keys($pages);
-
-								foreach($keys as $pageKey) {
+								$recentPosts = $dbPages->getList(1, 5, true);
+								foreach ($recentPosts as $pageKey) {
 									$page = buildPage($pageKey);
 									echo '<li><a href="'.$page->permalink().'">'.$page->title().'</a></li>';
 								}
