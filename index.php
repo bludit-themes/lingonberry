@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="js" lang="<?php echo $Site->language() ?>">
+<html class="js" lang="<?php echo substr($Site->language(),0,2); ?>">
 
 	<head profile="http://gmpg.org/xfn/11">
 		<?php include(THEME_DIR_PHP.'head.php') ?>
