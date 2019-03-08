@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="js" lang="<?php echo substr($Site->language(),0,2); ?>">
+<html class="js" lang="<?php echo substr($site->language(),0,2); ?>">
 
 	<head profile="http://gmpg.org/xfn/11">
 		<?php include(THEME_DIR_PHP.'head.php') ?>
@@ -7,10 +7,10 @@
 
 	<?php
 		if($WHERE_AM_I == 'page') {
-			if( $Page->status() == "fixed" ) {
+			if( $page->type() == "fixed" ) {
 				echo '<body class="page page-template-default">';
 			}
-			elseif( $Page->status() == "published" ) {
+			elseif( $page->type() == "published" ) {
 				echo '<body class="single single-post">';
 			}
 		} else {
@@ -25,11 +25,9 @@
 			<div class="navigation-inner section-inner">
 				<ul class="blog-menu">
 					<?php
-						echo '<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$Site->url().'">'.$Language->get('Homepage').'</a></li> ';
+						echo '<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$site->url().'">'.$L->get('Homepage').'</a></li> ';
 
-						$staticPages = $dbPages->getStaticDB();
-						foreach ($staticPages as $pageKey) {
-							$staticPage = buildPage($pageKey);
+						foreach ($staticContent as $staticPage) {
 							echo '<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$staticPage->permalink().'">'.$staticPage->title().'</a></li> ';
 						}
 					?>
@@ -46,11 +44,11 @@
 					if( !file_exists(PATH_UPLOADS_PROFILES.'admin.png') ) {
 						$file = DOMAIN_THEME.'css/images/logo.png';
 					}
-					echo '<a href="'.$Site->url().'" rel="home" class="logo"><img src="'.$file.'" alt="'.$Site->title().'"></a>';
+					echo '<a href="'.$site->url().'" rel="home" class="logo"><img src="'.$file.'" alt="'.$site->title().'"></a>';
 				?>
 
 				<h1 class="blog-title">
-					<a href="<?php echo $Site->url() ?>" rel="home"><?php echo $Site->title() ?></a>
+					<a href="<?php echo $site->url() ?>" rel="home"><?php echo $site->title() ?></a>
 				</h1>
 
 				<div class="nav-toggle">
@@ -66,7 +64,7 @@
 
 		<?php
 			if($WHERE_AM_I == 'page') {
-				if( $Page->status() == "static" ) {
+				if( $page->type() == "static" ) {
 					include(THEME_DIR_PHP.'page.php');
 				}
 				else {
@@ -84,7 +82,7 @@
 			<div class="credits-inner section-inner">
 
 				<p class="credits-left">
-					<span><?php echo $Site->footer() ?></span>
+					<span><?php echo $site->footer() ?></span>
 				</p>
 
 				<p class="credits-right">
