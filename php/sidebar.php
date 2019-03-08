@@ -6,11 +6,19 @@
 					<h3 class="widget-title">Recent Posts</h3>
 						<ul>
 							<?php
-								$recentPosts = $dbPages->getList(1, 5, true);
-								foreach ($recentPosts as $pageKey) {
-									$page = buildPage($pageKey);
-									echo '<li><a href="'.$page->permalink().'">'.$page->title().'</a></li>';
+							$onlyPublished = true;
+							$pageNumber = 1;
+							$numberOfItems = 5;
+							$publishedPages = $pages->getList($pageNumber, $numberOfItems, $onlyPublished);
+							
+							foreach ($publishedPages as $pageKey) {
+								try {
+									$page = new Page($pageKey);
+									echo'<li><a href="' . $page->permalink() . '">' . $page->title() . '</a></li>';
+								} catch (Exception $e) {
+								// Continue
 								}
+							}
 							?>
 						</ul>
 				</div>
@@ -25,23 +33,9 @@
 					<h3 class="widget-title">Tags</h3>
 						<ul>
 							<?php
-								$db = $dbTags->db;
-								$filter = $Url->filters('tag');
 
-								$tagArray = array();
-
-								foreach($db as $tagKey=>$fields) {
-									$tagArray[] = array('tagKey'=>$tagKey, 'name'=>$fields['name']);
-								}
-
-								$tagArray = array_slice($tagArray, 0, 5);
-
-								usort($tagArray, function($a, $b) {
-									return strcmp($a['tagKey'], $b['tagKey']);
-								});
-
-								foreach($tagArray as $tagKey=>$fields) {
-									echo '<li><a href="'.HTML_PATH_ROOT.$filter.'/'.$fields['tagKey'].'">'.$fields['name'].'</a></li>';
+								foreach($tags->db as $key=>$fields) {
+									echo '<li><a href="'.DOMAIN_TAGS.$key.'">'.$fields['name'].'</a></li>';
 								}
 							?>
 						</ul>
