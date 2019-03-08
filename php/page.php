@@ -8,23 +8,23 @@
 			<div class="content-inner comments-allowed">	
 				<div class="post-header">
 				
-					<?php if($Page->coverImage()) {
+					<?php if($page->coverImage()) {
 							echo '<div class="featured-media">';
-							echo 	'<img class="attachment-post-image wp-post-image cover-image" src="'.$Page->coverImage().'" alt="Cover Image">';
+							echo 	'<img class="attachment-post-image wp-post-image cover-image" src="'.$page->coverImage().'" alt="Cover Image">';
 							echo		'<div class="media-caption-container">';
-							echo			'<a href="'.$Page->permalink().'" rel="bookmark" title="'.$Page->title().'">';
-							echo				'<p class="media-caption">'.$Page->description().'</p>';
+							echo			'<a href="'.$page->permalink().'" rel="bookmark" title="'.$page->title().'">';
+							echo				'<p class="media-caption">'.$page->description().'</p>';
 							echo			'</a>';
 							echo		'</div>';
 							echo '</div> <!-- /featured-media -->';
 					} ?>
 		
-					<h2 class="post-title"><a href="<?php echo $Page->permalink() ?>" rel="bookmark" title="<?php echo $Page->title() ?>"><?php echo $Page->title() ?></a></h2>
+					<h2 class="post-title"><a href="<?php echo $page->permalink() ?>" rel="bookmark" title="<?php echo $page->title() ?>"><?php echo $page->title() ?></a></h2>
 					
 				</div> <!-- /post-header -->
 				
 				<div class="post-content">
-					<?php echo $Page->content() ?>
+					<?php echo $page->content() ?>
 				</div> <!-- /post-content -->
 			</div> <!-- /post content-inner -->
 			
