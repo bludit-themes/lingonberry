@@ -8,29 +8,29 @@
 			<div class="content-inner comments-allowed">	
 				<div class="post-header">
 				
-					<?php if($Page->coverImage()) {
+					<?php if($page->coverImage()) {
 							echo '<div class="featured-media">';
-							echo 	'<img class="attachment-post-image wp-post-image cover-image" src="'.$Page->coverImage().'" alt="Cover Image">';
+							echo 	'<img class="attachment-post-image wp-post-image cover-image" src="'.$page->coverImage().'" alt="Cover Image">';
 							echo		'<div class="media-caption-container">';
-							echo			'<a href="'.$Page->permalink().'" rel="bookmark" title="'.$Page->title().'">';
-							echo				'<p class="media-caption">'.$Page->description().'</p>';
+							echo			'<a href="'.$page->permalink().'" rel="bookmark" title="'.$page->title().'">';
+							echo				'<p class="media-caption">'.$page->description().'</p>';
 							echo			'</a>';
 							echo		'</div>';
 							echo '</div> <!-- /featured-media -->';
 					} ?>
 		
-					<h2 class="post-title"><a href="<?php echo $Page->permalink() ?>" rel="bookmark" title="<?php echo $Page->title() ?>"><?php echo $Page->title() ?></a></h2>
+					<h2 class="post-title"><a href="<?php echo $page->permalink() ?>" rel="bookmark" title="<?php echo $page->title() ?>"><?php echo $page->title() ?></a></h2>
 					
 					<div class="post-meta">
 					
-						<span class="post-date"><a href="<?php echo $Page->permalink() ?>" title="<?php echo $Page->date() ?>"><?php echo $Page->date() ?></a></span>
+						<span class="post-date"><a href="<?php echo $page->permalink() ?>" title="<?php echo $page->date() ?>"><?php echo $page->date() ?></a></span>
 						<span class="date-sep"> / </span>
 						<span class="post-author"><?php
-							if( Text::isNotEmpty($Page->user('firstName')) || Text::isNotEmpty($Page->user('lastName')) ) {
-								echo $Page->user('firstName').' '.$Page->user('lastName');
+							if( Text::isNotEmpty($page->user('firstName')) || Text::isNotEmpty($page->user('lastName')) ) {
+								echo $page->user('firstName').' '.$page->user('lastName');
 							}
 								else {
-								echo $Page->user('username');
+								echo $page->user('username');
 							}
 						?></span>
 						
@@ -38,12 +38,12 @@
 				</div> <!-- /post-header -->
 				
 				<div class="post-content">
-					<?php echo $Page->content() ?>
+					<?php echo $page->content() ?>
 					
 					<div class="post-cat-tags">
 						<p class="post-tags">Tags: 
 							<?php
-								$tags = $Page->tags(true);
+								$tags = $page->tags(true);
 								
 								foreach($tags as $tagKey=>$tagName) {
 									echo '<a class="post-category" href="'.HTML_PATH_ROOT.$Url->filters('tag').'/'.$tagKey.'">'.$tagName.'</a>';
