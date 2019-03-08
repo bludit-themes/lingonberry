@@ -5,7 +5,7 @@ As the name implies, Lingonberry has a charming, simple and colorful visual styl
 Responsive design and high-resolution assets means that Lingonberry will scale gracefully and look great on all devices – big and small, retina and non-retina.
 
 ## Compatible
-- Bludit v2.0
+- Bludit v3.x
 
 ## Screenshot
 ![screenshot-lingoberry](https://github.com/bludit-themes/lingonberry/raw/master/screenshot.png)
@@ -14,3 +14,6 @@ Responsive design and high-resolution assets means that Lingonberry will scale g
 - Anders Norén
 - http://www.andersnoren.se
 - Ported to Bludit by Hakim Zulkufli (@acrox999)
+- Updated by Clickwork
+
+## Changelog
