@@ -46,7 +46,7 @@
 								$tags = $page->tags(true);
 								
 								foreach($tags as $tagKey=>$tagName) {
-									echo '<a class="post-category" href="'.HTML_PATH_ROOT.$Url->filters('tag').'/'.$tagKey.'">'.$tagName.'</a>';
+									echo '<a class="post-category" href="'.HTML_PATH_ROOT.$url->filters('tag').'/'.$tagKey.'">'.$tagName.'</a>';
 								}
 							?>
 						</p>
