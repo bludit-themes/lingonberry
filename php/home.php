@@ -7,7 +7,7 @@
 			</div>
 			<div class="content-inner">
 				<div class="post-header">
-				
+
 					<?php if($page->coverImage()) {
 							echo '<div class="featured-media">';
 							echo 	'<img class="attachment-post-image wp-post-image cover-image" src="'.$page->coverImage().'" alt="Cover Image">';
@@ -18,7 +18,7 @@
 							echo		'</div>';
 							echo '</div> <!-- /featured-media -->';
 					} ?>
-					
+
 					<h2 class="post-title"><a href="<?php echo $page->permalink() ?>" rel="bookmark" title="<?php echo $page->title() ?>"><?php echo $page->title() ?></a></h2>
 					<div class="post-meta">
 
@@ -32,29 +32,29 @@
 								echo $page->user('username');
 							}
 						?></span>
-												
+
 					</div>
 				</div>
-				
+
 				<div class="post-content">
-					<?php echo $page->content(false) ?>
-					
+					<?php echo $page->contentBreak() ?>
+
 					<?php if($page->readMore()) { ?>
-						<a class="read-more" href="<?php echo $page->permalink() ?>"><?php $Language->printMe('Read more') ?></a>
+						<a class="read-more" href="<?php echo $page->permalink() ?>"><?php $language->printMe('Read more') ?></a>
 					<?php } ?>
-					
+
 				</div>
-				<div class="clear"></div>				
+				<div class="clear"></div>
 			</div>
 			<div class="clear"></div>
 			<div class="clear"></div>
 		</div>
 		<?php endforeach; ?>
-		
+
 		<div class="post-nav archive-nav">
 			<?php echo Paginator::html(); ?>
 		</div>
-		
+
 		<div class="clear"></div>
 	</div>
 </div>

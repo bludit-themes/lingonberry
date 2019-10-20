@@ -10,7 +10,7 @@
 							$pageNumber = 1;
 							$numberOfItems = 5;
 							$publishedPages = $pages->getList($pageNumber, $numberOfItems, $onlyPublished);
-							
+
 							foreach ($publishedPages as $pageKey) {
 								try {
 									$page = new Page($pageKey);
@@ -49,8 +49,13 @@
 			<div class="widget-content">
 					<h3 class="widget-title">Feed</h3>
 						<ul>
+							<?php if (Theme::sitemapUrl()): ?>
 							<li><a href="<?php echo Theme::sitemapUrl() ?>">Sitemap</a></li>
+							<?php endif; ?>
+
+							<?php if (Theme::rssUrl()): ?>
 							<li><a href="<?php echo Theme::rssUrl()?>">RSS Feed</a></li>
+							<?php endif; ?>
 						</ul>
 				</div>
 			<div class="clear"></div>
