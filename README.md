@@ -15,5 +15,3 @@ Responsive design and high-resolution assets means that Lingonberry will scale g
 - http://www.andersnoren.se
 - Ported to Bludit by Hakim Zulkufli (@acrox999)
 - Updated by Clickwork
-
-## Changelog
